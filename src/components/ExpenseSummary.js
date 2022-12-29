@@ -11,7 +11,7 @@ export const ExpenseSummary = (props)=> {
         <h3>
         Viewing {expenseCount === 1 ? "1 expense" : expenseCount +" expenses"} totalling {expenseTotal}
         </h3>
- );
+    );
 };
 
 const mapStateToProps = (state) => {
