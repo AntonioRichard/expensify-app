@@ -6,13 +6,14 @@ import database from '../../firebase/firebase';
 jest.useFakeTimers();
 
 const createMockStore = configureMockStore([thunk]);
+const uid = 'thisismytestuid';
 
 beforeEach(()=>{
   const expensesData = {};
   expenses.forEach(({id, description, note, amount, createdAt})=>{
     expensesData[id] = { description, note, amount, createdAt };
   })
-  database.ref('expenses').set(expensesData);
+  database.ref(`users/${uid}/expenses`).set(expensesData);
 });
 
 test('should setup remove expense action object', () => {
